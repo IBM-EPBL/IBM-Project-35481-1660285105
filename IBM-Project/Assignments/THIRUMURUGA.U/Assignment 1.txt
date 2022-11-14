@@ -1,0 +1,32 @@
+void setup()
+{
+pinMode(A3, INPUT);
+pinMode(8, OUTPUT);
+pinMode(2,INPUT);
+Serial.begin(9600);
+}
+void loop()
+{
+float temp;
+temp=analogRead(A3);
+temp =((temp*5)/1024);
+temp = (temp-0.5)*100;
+Serial.print("Temperature = ");
+Serial.print(temp);
+Serial.println(" C ");
+int motion=digitalRead(2);
+if (motion==1){
+Serial.println("Motion Detected");
+tone(8,15000);
+delay(3000);
+}
+else{
+Serial.println("No Motion");
+noTone(8);
+}
+if (temp<59)
+noTone(8);
+if (temp>=60)
+tone(8,1000);
+delay(5000);
+}

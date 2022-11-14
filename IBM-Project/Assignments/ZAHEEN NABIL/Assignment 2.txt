@@ -1,0 +1,15 @@
+import random
+temp=random.randint(0,100)
+humid=random.randint(0,100)
+print("Note:")
+print ("Normal Temperature Level is 50°C")
+print ("Normal Humidity Level is 50%")
+print (" ")
+if (temp>=50):
+print ("Temperature is High",temp,"°C")
+else:
+print ("Temperature is Normal",temp,"°C")
+if (humid>=50):
+print ("Humidity is High",humid,"%")
+else:
+print ("Humidity is Normal",humid,"%")
